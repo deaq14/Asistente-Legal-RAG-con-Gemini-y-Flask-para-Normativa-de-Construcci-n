@@ -1,0 +1,102 @@
+[
+  {
+    "context": "Decreto 1166 de 2025: Por el cual se adiciona la Sección 5 al Capítulo 1 del Título 6 de la Parte 2 del Libro 2 del Decreto 1077 de 2015 en lo relacionado con las condiciones especiales para la realización de intervenciones en las modalidades de mejoramiento de vivienda, vivienda progresiva o construcción en sitio propio que sean objeto de subsidio familiar de vivienda.",
+    "question": "¿Qué modifica el Decreto 1166 de 2025 en relación con las licencias de construcción en Colombia?",
+    "answer": "Elimina la necesidad de licencias de construcción para intervenciones subsidiadas en vivienda, reemplazándolas con certificaciones profesionales que verifiquen el cumplimiento de normas técnicas."
+  },
+  {
+    "context": "Artículo 301 de Ley 2294 de 2023: Corresponde al Gobierno nacional... establecer las condiciones especiales... sin expedición de licencia de construcción.",
+    "question": "¿Cuáles son las modalidades de subsidio afectadas por el Artículo 301 de Ley 2294 de 2023?",
+    "answer": "Mejoramiento de vivienda, vivienda progresiva o construcción en sitio propio, permitiendo verificación sin licencia formal."
+  },
+  {
+    "context": "Decreto 1401 de 2023: Modifica parcialmente el Reglamento Colombiano de Construcción Sismo Resistente NSR-10 para incluir condiciones de evaluación y reducción de vulnerabilidad sísmica en edificaciones de mampostería.",
+    "question": "¿Qué actualiza el Decreto 1401 de 2023 en las normas de construcción?",
+    "answer": "Agrega capítulos para la evaluación e intervención en edificaciones vulnerables a sismos, enfocándose en construcciones informales o progresivas."
+  },
+  {
+    "context": "Decreto 1580 de 2023: Corrige yerros en el Decreto 1401 de 2023, refinando definiciones y procedimientos para sistemas de mampostería en las actualizaciones de NSR-10.",
+    "question": "¿Qué corrige el Decreto 1580 de 2023?",
+    "answer": "Definiciones técnicas en NSR-10 para mampostería no reforzada, asegurando una implementación precisa en revisiones de licencias."
+  },
+  {
+    "context": "Decreto 1470 de 2024: Reglamenta el Artículo 298 de la Ley 2294 de 2023, implementando planes de gestión de hábitat en programas como Barrios de Paz.",
+    "question": "¿Qué programa implementa el Decreto 1470 de 2024?",
+    "answer": "Barrios de Paz, con planes de gestión de hábitat en áreas vulnerables, influyendo indirectamente en licencias urbanas."
+  },
+  {
+    "context": "Proyecto de Ley 252 de 2025: Propone normas sobre permisos y autorizaciones para la construcción de vivienda, enfatizando licencias urbanísticas previas para proteger a compradores.",
+    "question": "¿Qué protege el Proyecto de Ley 252 de 2025?",
+    "answer": "A los compradores de vivienda, requiriendo licencias urbanísticas previas y mayor transparencia en procesos de construcción."
+  },
+  {
+    "context": "Artículo 32 de Ley 2294 de 2023: Determina el orden de prevalencia en planes de ordenamiento territorial (POT), priorizando conservación ambiental y gestión de riesgos.",
+    "question": "¿Cuál es la prevalencia en planes de ordenamiento territorial según la Ley 2294?",
+    "answer": "Nivel 1 prioriza ambiente y riesgos; Nivel 2, protección alimentaria; hasta Nivel 6 para infraestructuras, afectando aprobaciones de licencias."
+  },
+  {
+    "context": "Artículo 38 de Ley 2294 de 2023: La UNGRD coordina estrategias para reasentamientos, legalización urbanística y mejoramiento de asentamientos humanos en zonas de riesgo.",
+    "question": "¿Cómo aborda la Ley 2294 los riesgos en asentamientos?",
+    "answer": "A través de la UNGRD, priorizando reasentamientos no mitigable y mejoramiento del hábitat, integrando normas de construcción sísmica."
+  },
+  {
+    "context": "Artículo 20 de Ley 2294 de 2023: Crea el Programa de Reincorporación Integral, facilitando acceso a tierras y vivienda para sujetos en reincorporación social.",
+    "question": "¿Para quién facilita acceso a vivienda el Artículo 20?",
+    "answer": "Sujetos en reincorporación social y económica, con enfoque diferencial, simplificando procesos de licencias en proyectos relacionados."
+  },
+  {
+    "context": "Artículo 208 de Ley 2294 de 2023: Permite la destinación específica de bienes de extinción de dominio para vivienda digna en poblaciones vulnerables.",
+    "question": "¿Cómo usa bienes de extinción de dominio la Ley 2294?",
+    "answer": "Mediante transferencia gratuita para vivienda en vulnerables clasificados en SISBEN, apoyando construcciones subsidiadas sin licencias tradicionales."
+  },
+  {
+    "context": "Ley 388 de 1997 (modificada): Regula el ordenamiento territorial y licencias de construcción estándar, sirviendo de base para excepciones en subsidios.",
+    "question": "¿Qué rol juega la Ley 388 de 1997 en licencias actuales?",
+    "answer": "Establece requisitos generales para licencias, pero permite excepciones en proyectos subsidiados bajo decretos recientes como el 1166 de 2025."
+  },
+  {
+    "context": "Decreto 1077 de 2015 (actualizado): Decreto Único Reglamentario del Sector Vivienda, Ciudad y Territorio, al que se adicionan secciones para condiciones especiales.",
+    "question": "¿Qué actualiza el Decreto 1166 en el Decreto 1077 de 2015?",
+    "answer": "Adiciona la Sección 5 para intervenciones subsidiadas, permitiendo certificaciones en lugar de licencias formales."
+  },
+  {
+    "context": "Artículo 51 de la Constitución Política de Colombia: Reconoce el derecho a una vivienda digna, fundamento para simplificaciones en licencias subsidiadas.",
+    "question": "¿Cómo influye la Constitución en las reformas de vivienda?",
+    "answer": "Respalda cambios para facilitar acceso a vivienda digna, justificando eliminaciones de barreras burocráticas en subsidios."
+  },
+  {
+    "context": "Resolución 0330 de 2017 (NSR-10 base): Establece el Reglamento Colombiano de Construcción Sismo Resistente, modificado por decretos de 2023.",
+    "question": "¿Qué es la NSR-10 y cómo se ha actualizado?",
+    "answer": "Norma sísmica base para construcciones; actualizada en 2023 para vulnerabilidad en mampostería, obligatoria en certificaciones de subsidios."
+  },
+  {
+    "context": "Ley 2079 de 2021: Modifica la Ley 29 de 1990 para subsidios familiares de vivienda, integrando con exenciones de licencias.",
+    "question": "¿Qué relación tiene la Ley 2079 con subsidios actuales?",
+    "answer": "Amplía subsidios para vivienda rural y urbana, alineándose con decretos que eliminan licencias para modalidades progresivas."
+  },
+  {
+    "context": "Decreto 1469 de 2010 (actualizado): Reglamenta licencias urbanísticas, con excepciones incorporadas en normas de 2025.",
+    "question": "¿Qué excepciones introduce el Decreto 1166 al 1469 de 2010?",
+    "answer": "Permite intervenciones subsidiadas sin licencia, usando responsabilidad profesional para verificar normas urbanas y sísmicas."
+  },
+  {
+    "context": "Artículo 114 de Ley 2294 de 2023: Asigna subsidios de vivienda para la Fuerza Pública, con procesos simplificados.",
+    "question": "¿Para quién asigna subsidios el Artículo 114?",
+    "answer": "Miembros de la Fuerza Pública, con apropiación anual del 4% de nómina, potencialmente exentos de licencias bajo decretos recientes."
+  },
+  {
+    "context": "Proyecto de Ley 589 de 2024 (relacionado): Busca reformas en ordenamiento territorial, impactando licencias en zonas de riesgo.",
+    "question": "¿Qué busca el Proyecto de Ley 589 de 2024?",
+    "answer": "Mejorar gestión territorial en riesgos, complementando NSR-10 y afectando aprobaciones de construcciones."
+  },
+  {
+    "context": "Decreto 092 de 2017: Regula subsidios VIS y VIP, base para exenciones en 2025.",
+    "question": "¿Cómo se relaciona el Decreto 092 de 2017 con cambios recientes?",
+    "answer": "Establece marcos para subsidios de interés social, ahora simplificados sin licencias para ciertas intervenciones."
+  },
+  {
+    "context": "Opiniones de stakeholders: Críticas de gremios constructores sobre riesgos en calidad sin licencias, vs. apoyo gubernamental por acceso equitativo.",
+    "question": "¿Cuáles son las controversias alrededor del Decreto 1166 de 2025?",
+    "answer": "Críticos temen baja calidad y pérdidas municipales; proponentes enfatizan beneficios para familias de bajos ingresos y reducción de déficits habitacionales."
+  }
+]

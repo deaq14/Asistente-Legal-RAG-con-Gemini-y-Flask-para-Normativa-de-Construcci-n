@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDM Consultores e Inmobiliarios | Arquitectura y Licencias Colombia</title>
+    <style>
+        /* --- VARIABLES Y RESET --- */
+        :root {
+            --primary: #1a2a3a; /* Azul oscuro corporativo */
+            --secondary: #c5a059; /* Dorado/Beige arquitectura */
+            --light: #f4f4f4;
+            --dark: #111;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--light);
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* --- HEADER --- */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo span { color: var(--secondary); }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--secondary); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(rgba(26, 42, 58, 0.8), rgba(26, 42, 58, 0.8)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 10px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover { background: #b08d4b; }
+
+        /* --- SERVICES --- */
+        .section {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border-bottom: 4px solid var(--secondary);
+        }
+
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { margin-bottom: 1rem; color: var(--primary); }
+
+        /* --- ABOUT --- */
+        .about {
+            background: var(--white);
+        }
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+        .about-text { flex: 1; min-width: 300px; }
+        .about-stats { 
+            flex: 1; 
+            display: flex; 
+            gap: 20px; 
+            justify-content: center;
+        }
+        .stat-box {
+            text-align: center;
+            background: var(--primary);
+            color: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            min-width: 150px;
+        }
+        .stat-number { font-size: 2.5rem; font-weight: bold; color: var(--secondary); }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: auto;
+        }
+
+        /* --- CHAT WIDGET STYLES (LLM READY) --- */
+        .chat-widget-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .chat-button {
+            background: var(--secondary);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+        }
+
+        .chat-button:hover { transform: scale(1.1); }
+
+        .chat-window {
+            background: var(--white);
+            width: 350px;
+            height: 450px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            margin-bottom: 15px;
+            display: none; /* Oculto por defecto */
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+
+        .chat-header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h4 { font-size: 1rem; }
+        .close-chat { background: none; border: none; color: white; cursor: pointer; font-size: 1.2rem;}
+
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background: #f9f9f9;
+        }
+
+        .message {
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            max-width: 80%;
+        }
+
+        .message.bot {
+            background: #e0e0e0;
+            color: #333;
+            align-self: flex-start;
+            border-bottom-left-radius: 0;
+        }
+
+        .message.user {
+            background: var(--primary);
+            color: white;
+            margin-left: auto; /* Alinea a la derecha */
+            border-bottom-right-radius: 0;
+        }
+
+        .chat-input-area {
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            display: flex;
+            gap: 10px;
+            background: white;
+        }
+
+        .chat-input-area input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            outline: none;
+        }
+
+        .chat-input-area button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        /* Visible state class */
+        .chat-window.open {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">MDM <span>Consultores</span></div>
+            <div class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Expertos en Arquitectura y Licencias en Colombia</h1>
+            <p>Más de 15 años materializando proyectos y gestionando trámites legales con precisión y rapidez.</p>
+            <a href="#chat-widget" onclick="toggleChat()" class="btn">Consultar Ahora</a>
+        </div>
+    </section>
+
+    <section id="nosotros" class="section about">
+        <div class="section-title">
+            <h2>Nuestra Trayectoria</h2>
+        </div>
+        <div class="about-container">
+            <div class="about-text">
+                <p>En <strong>MDM Consultores e Inmobiliarios</strong>, entendemos que cada proyecto arquitectónico en Colombia requiere un balance perfecto entre diseño innovador y cumplimiento normativo.</p>
+                <br>
+                <p>Con más de una década y media en el sector, nos hemos especializado en destrabar procesos de curaduría y ofrecer consultoría inmobiliaria integral para constructores y propietarios.</p>
+            </div>
+            <div class="about-stats">
+                <div class="stat-box">
+                    <div class="stat-number">+15</div>
+                    <div>Años de Experiencia</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">+500</div>
+                    <div>Licencias Aprobadas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="section">
+        <div class="section-title">
+            <h2>Nuestros Servicios</h2>
+        </div>
+        
+
+[Image of Architectural design process flow]
+
+        <div class="services-grid">
+            <div class="card">
+                <h3>Gestión de Licencias</h3>
+                <p>Tramitamos licencias de construcción, reconocimientos y subdivisiones ante las Curadurías Urbanas en toda Colombia.</p>
+            </div>
+            <div class="card">
+                <h3>Diseño Arquitectónico</h3>
+                <p>Diseños modernos y funcionales que cumplen con la normativa POT vigente desde el primer boceto.</p>
+            </div>
+            <div class="card">
+                <h3>Consultoría Inmobiliaria</h3>
+                <p>Asesoría legal y técnica para la compra, venta y desarrollo de lotes y propiedades.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <h3>MDM Consultores e Inmobiliarios</h3>
+        <p>Bogotá, Colombia | Tel: +57 300 123 4567</p>
+        <p>&copy; 2024 MDM Consultores. Todos los derechos reservados.</p>
+    </footer>
+
+    <div class="chat-widget-container" id="chat-widget">
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div>
+                    <h4>Asistente Virtual MDM</h4>
+                    <small>En línea</small>
+                </div>
+                <button class="close-chat" onclick="toggleChat()">✕</button>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    Hola, bienvenido a MDM Consultores. ¿En qué podemos ayudarte con tu proyecto o licencia hoy?
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <input type="text" id="userInput" placeholder="Escribe tu consulta..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()">Enviar</button>
+            </div>
+        </div>
+
+        <button class="chat-button" onclick="toggleChat()">
+            💬
+        </button>
+    </div>
+
+    <script src="script.js"></script> 
+</body>
+</html>
+</body>
+</html>
