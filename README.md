@@ -49,6 +49,7 @@ Python
 
 # EN app.py
 os.environ["GOOGLE_API_KEY"] = "TU_API_KEY_AQUI" 
+
 2. Base de Conocimiento (RAG)
 Asegúrate de que el archivo fine.json esté en el mismo directorio que app.py. Este archivo contiene la información legal especializada que alimenta el RAG.
 
