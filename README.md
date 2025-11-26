@@ -23,13 +23,6 @@ Python 3.x
 Una Clave API de Google Gemini (obtenida en Google AI Studio).
 
 Instalación del Entorno
-Clonar el repositorio:
-
-Bash
-
-git clone https://docs.github.com/es/repositories/creating-and-managing-repositories/quickstart-for-repositories
-cd [NOMBRE DEL REPOSITORIO]
-Crear y activar el entorno virtual:
 
 Bash
 
