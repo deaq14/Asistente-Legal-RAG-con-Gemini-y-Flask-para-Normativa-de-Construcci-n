@@ -1,5 +1,5 @@
 # Asistente-Legal-RAG-con-Gemini-y-Flask-para-Normativa-de-Construcción
-probando branch
+
 🤖 Asistente Legal de Construcción 🏢
 Este proyecto implementa un sistema de Generación Aumentada por Recuperación (RAG) que utiliza el modelo Gemini 1.5 Flash para responder preguntas específicas sobre la normativa legal colombiana vigente en materia de construcción y vivienda, complementando la información con la búsqueda en tiempo real (web grounding).
 
