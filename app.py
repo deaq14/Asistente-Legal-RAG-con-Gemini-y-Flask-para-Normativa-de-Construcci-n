@@ -15,7 +15,7 @@ app = Flask(__name__)
 CORS(app)
 
 # --- CONFIGURACIÓN DE GEMINI ---
-os.environ["GOOGLE_API_KEY"] = "AIzaSyAmSCctoYYkrER6LVjHn9aHCsetkxR4vu8"
+os.environ["GOOGLE_API_KEY"] = "Tu API KEY"
 
 # Cliente con la nueva SDK
 client = genai.Client(
