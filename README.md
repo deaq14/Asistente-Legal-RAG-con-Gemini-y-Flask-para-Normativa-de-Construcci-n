@@ -1,7 +1,7 @@
 # Asistente-Legal-RAG-con-Gemini-y-Flask-para-Normativa-de-Construcción
 
 🤖 Asistente Legal de Construcción 🏢
-Este proyecto implementa un sistema de Generación Aumentada por Recuperación (RAG) que utiliza el modelo Gemini 1.5 Flash para responder preguntas específicas sobre la normativa legal colombiana vigente en materia de construcción y vivienda, complementando la información con la búsqueda en tiempo real (web grounding).
+Este proyecto implementa un sistema de Generación Aumentada por Recuperación (RAG) que utiliza el modelo Gemini 2.5 Flash para responder preguntas específicas sobre la normativa legal colombiana vigente en materia de construcción y vivienda, complementando la información con la búsqueda en tiempo real (web grounding).
 
 ✨ Características Principales
 Generación Aumentada por Recuperación (RAG): Utiliza un archivo fine.json especializado en leyes de construcción para garantizar respuestas precisas y autorizadas.
@@ -33,7 +33,7 @@ Instalar las dependencias de Python:
 
 Bash
 
-pip install Flask google-generativeai
+pip install Flask google-generativeai google-genai
 🚀 Configuración y Ejecución
 1. Configuración de la API Key
 Abre el archivo app.py y reemplaza el marcador de posición TU_API_KEY_AQUI con tu clave API real:
