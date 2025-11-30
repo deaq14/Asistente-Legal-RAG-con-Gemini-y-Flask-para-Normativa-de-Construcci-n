@@ -1,24 +1,27 @@
 import os
 import json
-import google.generativeai as genai
+from google import genai
+from google.genai.types import (
+    GenerateContentConfig,
+    GoogleSearch,
+    HttpOptions,
+    Tool,
+)
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-
-# --- VERIFICACIÓN DE VERSIÓN ---
-print(f"Versión de la librería google-generativeai: {genai.__version__}")
 
 # --- CONFIGURACIÓN DE FLASK ---
 app = Flask(__name__)
 CORS(app)
 
 # --- CONFIGURACIÓN DE GEMINI ---
-os.environ["GOOGLE_API_KEY"] = "TU API KEY DE GOOGLE"
-genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
+os.environ["GOOGLE_API_KEY"] = "AIzaSyAmSCctoYYkrER6LVjHn9aHCsetkxR4vu8"
 
-# NOTA IMPORTANTE: Google Search NO está disponible como herramienta en la SDK de Python
-# Solo está disponible en Google AI Studio y en la API REST directamente
-# Usamos el modelo sin herramientas adicionales
-model = genai.GenerativeModel('gemini-2.5-flash')
+# Cliente con la nueva SDK
+client = genai.Client(
+    api_key=os.environ["GOOGLE_API_KEY"],
+    http_options=HttpOptions(api_version="v1alpha")
+)
 
 # --- BASE DE CONOCIMIENTO RAG ---
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -29,7 +32,7 @@ try:
         KNOWLEDGE_BASE = json.load(f)
     print(f"Base de conocimiento cargada: {file_path}")
 except Exception as e:
-    print(f"Nota: No se cargó fine.json. Se usará conocimiento del modelo.")
+    print(f"Nota: No se cargó fine.json. Se usará búsqueda web.")
     KNOWLEDGE_BASE = []
 
 def retrieve_context(query, knowledge_base):
@@ -48,7 +51,7 @@ def retrieve_context(query, knowledge_base):
     if relevant_contexts:
         return "\n---\n".join(relevant_contexts[:5])
     else:
-        return "CONTEXTO NO ENCONTRADO EN LA BASE DE DATOS LEGAL."
+        return None
 
 @app.route('/chat', methods=['POST'])
 def chat():
@@ -61,59 +64,55 @@ def chat():
 
         # 1. Recuperamos contexto local (RAG)
         contexto_inyectado = retrieve_context(mensaje_usuario, KNOWLEDGE_BASE)
-        
-        # 2. Determinamos si la pregunta necesita información actualizada
-        palabras_clave_tiempo = ['actual', 'hoy', 'ahora', 'reciente', 'último', 'últimos', 
-                                  'este año', '2024', '2025', 'clima', 'precio', 'cotización']
-        necesita_info_actual = any(palabra in mensaje_usuario.lower() for palabra in palabras_clave_tiempo)
 
-        # 3. Preparamos el Prompt
-        if contexto_inyectado != "CONTEXTO NO ENCONTRADO EN LA BASE DE DATOS LEGAL.":
-            # Tenemos información en la base de datos
-            prompt_ingenieria = f"""
+        # 2. Preparamos el Prompt
+        if contexto_inyectado:
+            # Tenemos información en nuestra base de datos
+            prompt = f"""
 Actúa como el asistente virtual experto de la empresa "MDM Consultores e Inmobiliarios".
 
-CONTEXTO LEGAL INYECTADO (Esta es tu fuente principal):
+CONTEXTO LEGAL INTERNO (Tu fuente principal):
 {contexto_inyectado}
 
 PREGUNTA DEL CLIENTE:
 {mensaje_usuario}
 
 INSTRUCCIONES:
-- Responde basándote ÚNICAMENTE en el contexto legal proporcionado
-- Si el contexto no contiene la información específica, dilo claramente
+- Responde basándote principalmente en el contexto legal interno
+- Si el contexto no es suficiente, puedes complementar con búsqueda web
+- Si usas información de internet, inicia con: "**[Información complementaria de internet]**"
 - Mantén un tono profesional y claro
 """
+            usar_busqueda = True  # Permitimos búsqueda como complemento
         else:
-            # No hay información en la base de datos, usamos conocimiento del modelo
-            if necesita_info_actual:
-                advertencia = "⚠️ **Nota:** Mi información tiene fecha de corte en enero 2025. Para información actualizada, te recomiendo verificar fuentes oficiales.\n\n"
-            else:
-                advertencia = ""
-                
-            prompt_ingenieria = f"""
+            # No hay información en la base, usamos búsqueda web directamente
+            prompt = f"""
 Actúa como el asistente virtual experto de la empresa "MDM Consultores e Inmobiliarios".
-
-La pregunta del cliente NO se encuentra en nuestra base de datos legal.
 
 PREGUNTA DEL CLIENTE:
 {mensaje_usuario}
 
 INSTRUCCIONES:
-- Proporciona la mejor respuesta posible basada en tu conocimiento general
-- Si es un tema legal colombiano, ofrece información general útil
-- Si necesita información actualizada más allá de enero 2025, indícalo claramente
+- Busca información actualizada y relevante
+- Inicia tu respuesta con: "**[Información de internet]**"
+- Proporciona información precisa y verificable
 - Mantén un tono profesional y claro
 """
+            usar_busqueda = True
 
-        # 4. Llamada al modelo
-        response = model.generate_content(prompt_ingenieria)
+        # 3. Configuración de herramientas
+        config = GenerateContentConfig(
+            tools=[Tool(google_search=GoogleSearch())]
+        ) if usar_busqueda else None
+
+        # 4. Llamada al modelo con Google Search
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt,
+            config=config
+        )
         
-        respuesta_final = response.text
-        if necesita_info_actual and contexto_inyectado == "CONTEXTO NO ENCONTRADO EN LA BASE DE DATOS LEGAL.":
-            respuesta_final = f"⚠️ **Nota:** Mi información tiene fecha de corte en enero 2025. Para datos actualizados, verifica fuentes oficiales.\n\n{respuesta_final}"
-        
-        return jsonify({'respuesta': respuesta_final})
+        return jsonify({'respuesta': response.text})
 
     except Exception as e:
         print(f"Error detallado: {e}")
@@ -123,14 +122,14 @@ INSTRUCCIONES:
 def health():
     return jsonify({
         'status': 'ok', 
-        'model': 'gemini-2.0-flash-exp',
-        'note': 'Google Search no disponible en SDK Python. Usar API REST si se requiere.'
+        'model': 'gemini-2.5-flash',
+        'google_search': 'enabled'
     })
 
 if __name__ == '__main__':
     print("=" * 60)
     print("Servidor MDM corriendo en puerto 5000...")
-    print("IMPORTANTE: Google Search NO está disponible en la SDK de Python")
-    print("Solo funciona vía API REST o Google AI Studio")
+    print("✓ Google Search HABILITADO")
+    print("✓ Base de conocimiento RAG activa")
     print("=" * 60)
     app.run(debug=True, port=5000)
