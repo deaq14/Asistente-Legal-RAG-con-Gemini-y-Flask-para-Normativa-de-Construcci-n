@@ -98,5 +98,35 @@
     "context": "Opiniones de stakeholders: Críticas de gremios constructores sobre riesgos en calidad sin licencias, vs. apoyo gubernamental por acceso equitativo.",
     "question": "¿Cuáles son las controversias alrededor del Decreto 1166 de 2025?",
     "answer": "Críticos temen baja calidad y pérdidas municipales; proponentes enfatizan beneficios para familias de bajos ingresos y reducción de déficits habitacionales."
+  },
+  {
+    "context": "Ley 2294 de 2023 (Plan Nacional de Desarrollo 2022-2026), Artículo 80, Parágrafo Séptimo, sobre la ejecución de proyectos regionales.",
+    "question": "¿Cuál es la responsabilidad fiscal de las entidades territoriales respecto a la financiación de la actualización catastral en zonas de proyecto según el PND 2023?",
+    "answer": "La financiación de la actualización de los catastros de las zonas en donde se ubique el proyecto debe ser asumida por las entidades territoriales, sin que puedan comprometerse para este fin los recursos provenientes del convenio de cofinanciación. [7]"
+  },
+  {
+    "context": "Sentencia T-029 de 2025 de la Corte Constitucional (04/02/2025), que revisó el fallo de tutela sobre el Plan de Cierre Minero de Prodeco S.A., involucrando derechos de participación y debido proceso.",
+    "question": "¿Qué implicación tiene la Sentencia T-029 de 2025 para los procesos de concertación y adopción de instrumentos de planeación territorial (POT/PP)?",
+    "answer": "La sentencia establece un precedente que eleva el estándar de valoración probatoria en las decisiones territoriales de alto impacto, al identificar un defecto fáctico por indebida valoración, reforzando la obligación de justificar exhaustivamente la inclusión de la participación y los estudios técnicos para evitar la vulneración del debido proceso. [13, 14]"
+  },
+  {
+    "context": "Decreto 2181 de 2006 (compilado en el DUR 1077 de 2015), que reglamenta el procedimiento y contenido de los Planes Parciales conforme a la Ley 388 de 1997.",
+    "question": "¿Qué tipo de modificación esencial del Ordenamiento Territorial está expresamente prohibida para los Planes Parciales en Colombia?",
+    "answer": "Los planes parciales no pueden, bajo ninguna circunstancia, modificar la clasificación del suelo, ni las determinaciones y demás normas urbanísticas estructurales adoptadas previamente en los planes de ordenamiento territorial. [3]"
+  },
+  {
+    "context": "Ley 2294 de 2023 (PND), como marco habilitante para la simplificación de trámites de vivienda, desarrollado por el Decreto 1166 de 2025.",
+    "question": "¿Cuál es el fundamento legal dentro de la Ley 2294 de 2023 para la simplificación de trámites de vivienda social (ej. exención de licencia para vivienda progresiva subsidiada)?",
+    "answer": "El Artículo 301 de la Ley 2294 de 2023 adicionó el Parágrafo 6 al artículo 6 de la Ley 3ª de 1992, sirviendo de base para la regulación del reconocimiento de viviendas construidas sin licencia en el contexto del subsidio, tal como lo cita el Decreto 1166/25. [8, 9]"
+  },
+  {
+    "context": "Decreto 1807 de 2014, reglamentario de la Ley 388 de 1997, en lo referente a la incorporación de la Gestión del Riesgo de Desastres (GRD) en los Planes de Ordenamiento Territorial.",
+    "question": "¿Cómo deben determinarse las medidas de mitigación no estructurales en el POT, y qué función cumplen en el uso del suelo?",
+    "answer": "Se deben determinar con base en los resultados de los estudios básicos de riesgo, orientados a establecer el modelo de ocupación del territorio y las restricciones o condicionamientos para el uso del suelo, mediante la determinación de normas urbanísticas. [15]"
+  },
+  {
+    "context": "Proyecto de Ley 244 de 2025 S., que busca modificar y adicionar la Ley 388 de 1997, centrándose en el fortalecimiento de la planificación urbana.",
+    "question": "¿Cuál es la nueva dimensión organizadora que el Proyecto de Ley 244 de 2025 busca integrar en el Ordenamiento Territorial Urbano?",
+    "answer": "La dimensión organizadora de las 'vidas urbanas' con el fin de fortalecer la planificación urbana a partir de su reconocimiento como un factor clave del Ordenamiento Territorial Urbano. [20]"
   }
 ]
